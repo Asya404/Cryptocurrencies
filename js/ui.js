@@ -18,4 +18,18 @@ class UI {
                 });
             })
     }
+
+    // Prints an error message
+    printMessage(message, className) {
+        const div = document.createElement('div');
+        div.className = className;
+        div.appendChild(document.createTextNode(message));
+        const messageDiv = document.querySelector('.messages');
+        messageDiv.appendChild(div);
+
+        // Remove the message
+        setTimeout(() => {
+            document.querySelector('.messages div').remove();
+        }, 2000)
+    }
 }

@@ -18,6 +18,7 @@ const getValues = (e) => {
         console.log('success');
     } else {
         console.log('error');
+        ui.printMessage('All the fields are mandatory!', 'error');
     }
 
     console.log(currencySelect+':'+cryptoSelect)
