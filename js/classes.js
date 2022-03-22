@@ -2,7 +2,7 @@ class cryptoAPI {
 
     // Here we get data with all the crypto, then build the options
     async getCryptoList() {
-        const response = await fetch('https://api2.binance.com/api/v3/ticker/24hr')
+        const response = await fetch('//api2.binance.com/api/v3/ticker/24hr')
         const data = await response.json();
         console.log(data)
         return {
@@ -31,11 +31,11 @@ class cryptoAPI {
     constructor() {
         this.printCrypto();
     }
-    
+
 
     // Here we get data with crypto pairs
     async requestAPI(currency, cryptocurrency) {
-        const response = await fetch(`https://api.binance.com/api/v3/ticker/price?symbol=${cryptocurrency}${currency}`)
+        const response = await fetch(`//api.binance.com/api/v3/ticker/price?symbol=${cryptocurrency}${currency}`)
         const data = await response.json();
         return {
             data
