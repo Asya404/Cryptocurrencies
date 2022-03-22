@@ -1,7 +1,6 @@
 // Instanciate the classes
 
 const cryptoapi = new cryptoAPI();
-const ui = new UI();
 const form = document.querySelector('#form');
 
 
@@ -17,7 +16,7 @@ const getValues = (e) => {
         cryptoapi.requestAPI(currencySelect, cryptoSelect)
             .then(data => {
                 data = data.data;
-                ui.displayResult(data, currencySelect);
+                cryptoapi.displayResult(data, currencySelect);
             })
     } else {
         ui.printMessage('All the fields are mandatory!', 'error');
