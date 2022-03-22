@@ -8,20 +8,23 @@ const form = document.querySelector('#form');
 const getValues = (e) => {
     e.preventDefault();
 
-    // read currency
+    // read the values
     const currencySelect = document.querySelector('#currency').value;
-    // read cryptocurrency
     const cryptoSelect = document.querySelector('#cryptocurrency').value;
 
     // validating
-    if(currencySelect !== '' && cryptoSelect !== '') {
-        console.log('success');
+    if (currencySelect !== '' && cryptoSelect !== '') {
+        cryptoapi.requestAPI(currencySelect, cryptoSelect)
+            .then(data => {
+                console.log(data)
+
+            })
+
     } else {
-        console.log('error');
         ui.printMessage('All the fields are mandatory!', 'error');
     }
 
-    console.log(currencySelect+':'+cryptoSelect)
+    console.log(currencySelect + ':' + cryptoSelect)
 }
 
 form.addEventListener('submit', getValues);
